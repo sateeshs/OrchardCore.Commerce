@@ -12,5 +12,8 @@ namespace OrchardCore.Commerce.Models
         /// The product's SKU, which can also be used as an alias for the item.
         /// </summary>
         public string Sku { get; set; }
+        public string SelectedCategory { get; set; }
+        public System.Collections.Generic.IEnumerable<string> Category { get; set; }
+
     }
 }

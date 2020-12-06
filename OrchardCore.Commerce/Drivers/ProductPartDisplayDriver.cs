@@ -33,6 +33,7 @@ namespace OrchardCore.Commerce.Drivers
         public override async Task<IDisplayResult> UpdateAsync(ProductPart model, IUpdateModel updater, UpdatePartEditorContext context)
         {
             await updater.TryUpdateModelAsync(model, Prefix, t => t.Sku);
+            await updater.TryUpdateModelAsync(model,Prefix,t=>t.Category);
 
             return Edit(model, context);
         }
@@ -41,6 +42,7 @@ namespace OrchardCore.Commerce.Drivers
         {
             model.ContentItem = part.ContentItem;
             model.Sku = part.Sku;
+            model.Category = part.Category;
             model.ProductPart = part;
 
             model.Attributes = _productAttributeService.GetProductAttributeFields(part.ContentItem);

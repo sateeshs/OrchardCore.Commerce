@@ -9,6 +9,7 @@ namespace OrchardCore.Commerce.ViewModels
     public class ProductPartViewModel
     {
         public string Sku { get; set; }
+        public IEnumerable<string> Category { get; set; }
 
         [BindNever]
         public ContentItem ContentItem { get; set; }

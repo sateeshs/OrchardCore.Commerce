@@ -28,6 +28,7 @@ namespace OrchardCore.Commerce.Migrations
                 table => table
                     .Column<string>("Sku", col => col.WithLength(128))
                     .Column<string>("ContentItemId", c => c.WithLength(26))
+                    .Column<string>("Category", c => c.WithLength(120))
             );
 
             SchemaBuilder.AlterTable(nameof(ProductPartIndex), table => table

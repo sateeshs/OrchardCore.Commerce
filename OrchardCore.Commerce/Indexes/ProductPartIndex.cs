@@ -8,6 +8,7 @@ namespace OrchardCore.Commerce.Indexes
     {
         public string ContentItemId { get; set; }
         public string Sku { get; set; }
+        public string Category { get; set; }
     }
 
     /// <summary>
@@ -35,7 +36,8 @@ namespace OrchardCore.Commerce.Indexes
                     return new ProductPartIndex
                     {
                         Sku = productPart.Sku.ToLowerInvariant(),
-                        ContentItemId = contentItem.ContentItemId
+                        ContentItemId = contentItem.ContentItemId,
+                        Category = productPart.SelectedCategory
                     };
                 });
         }
