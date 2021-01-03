@@ -6,10 +6,13 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using Money;
 using Money.Abstractions;
+using OrchardCore.Apis;
 using OrchardCore.Commerce.Abstractions;
 using OrchardCore.Commerce.Activities;
 using OrchardCore.Commerce.Drivers;
 using OrchardCore.Commerce.Fields;
+using OrchardCore.Commerce.GraphQL;
+using OrchardCore.Commerce.GraphQL.Types;
 using OrchardCore.Commerce.Handlers;
 using OrchardCore.Commerce.Indexes;
 using OrchardCore.Commerce.Migrations;
@@ -140,6 +143,22 @@ namespace OrchardCore.Commerce
         public override void ConfigureServices(IServiceCollection services)
         {
             services.AddScoped<ICurrencySelector, CommerceSettingsCurrencySelector>();
+        }
+    }
+
+
+    [RequireFeatures("OrchardCore.Apis.GraphQL")]
+    public class CommerceGraphQLStartup : StartupBase
+    {
+        public override void ConfigureServices(IServiceCollection services)
+        {
+            //services.AddInputObjectGraphType<AutoroutePart, AutorouteInputObjectType>();
+            //services.AddObjectGraphType<AutoroutePart, AutorouteQueryObjectType>();
+
+            services.AddObjectGraphType<ProductPart, ProductQueryObjectType>();
+            //PricePart
+            //OrderPart
+
         }
     }
 }
