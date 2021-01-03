@@ -7,5 +7,6 @@
 SampleWebApp/App_Data/
 SampleWebApp/wwwroot/is-cache/
 *.placeholder
+/core
 /.vscode
 /SampleWebApp/App_Data.zip

@@ -5,7 +5,6 @@ using GraphQL.DataLoader;
 using GraphQL.Types;
 using OrchardCore.Apis.GraphQL;
 using OrchardCore.Commerce.Models;
-using OrchardCore.ContentManagement.GraphQL;
 
 namespace OrchardCore.Commerce.GraphQL.Types
 {
